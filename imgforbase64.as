@@ -20,20 +20,20 @@
 
 
     import flash.display.Sprite;
-	  import flash.display.LoaderInfo;
+    import flash.display.LoaderInfo;
     import flash.events.*;
-	  import flash.external.ExternalInterface;
-	  import flash.display.Stage;
-	  import flash.display.StageScaleMode;
-	  import flash.display.StageAlign;
-	  import flash.display.StageScaleMode;
+    import flash.external.ExternalInterface;
+    import flash.display.Stage;
+    import flash.display.StageScaleMode;
+    import flash.display.StageAlign;
+    import flash.display.StageScaleMode;
     
     public class imgforbase64 extends Sprite {
-      private var fileRef:FileReference; 
-		  private var button:Sprite;
-      private var loader:Loader;
-      private var finalpic:Bitmap;
-      private var flashvars:Object;
+        private var fileRef:FileReference; 
+        private var button:Sprite;
+        private var loader:Loader;
+        private var finalpic:Bitmap;
+        private var flashvars:Object;
 
       //打开本地图片
       private function openFile(event:Event):void{ 
@@ -71,17 +71,17 @@
       public function imgforbase64():void{
         //让场景和按钮一样大，不按照比例来
         stage.align = StageAlign.TOP_LEFT;
-			  stage.scaleMode = StageScaleMode.NO_SCALE;
-			  flashvars = LoaderInfo(this.root.loaderInfo).parameters;
+        stage.scaleMode = StageScaleMode.NO_SCALE;
+        flashvars = LoaderInfo(this.root.loaderInfo).parameters;
         //ExternalInterface.call('console.log',flashvars);    
-			  button = new Sprite();
-			  button.buttonMode = true;
-			  button.useHandCursor = true;
-			  button.graphics.beginFill(0xCCFF00);
-			  button.graphics.drawRect(0, 0, Math.floor(flashvars.width), Math.floor(flashvars.height));
-			  button.alpha = 0.0;
-			  addChild(button);
-			  button.addEventListener(MouseEvent.CLICK, openFile);
+        button = new Sprite();
+        button.buttonMode = true;
+        button.useHandCursor = true;
+        button.graphics.beginFill(0xCCFF00);
+        button.graphics.drawRect(0, 0, Math.floor(flashvars.width), Math.floor(flashvars.height));
+        button.alpha = 0.0;
+        addChild(button);
+        button.addEventListener(MouseEvent.CLICK, openFile);
       }
     }
  }
