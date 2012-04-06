@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>test demo</title>
+    <script src="swfobject.js"></script>
+  </head>
+  <body>
+    <div id="btn"></div>
+    <script>
+      function imgforbase64(str){
+        var id = 'J_preview',
+            img;
+            if(!document.getElementById(id)){
+              img = document.createElement('img');
+              img.id = id;
+              img.src = 'data:image/png;base64,'+str;
+              document.body.appendChild(img);
+            }else{
+              img  = document.getElementById(id);
+              img.src = 'data:image/png;base64,'+str;
+            }
+        console.log(str);
+      }
+
+      swfobject.embedSWF('imgforbase64.swf','btn',200,200,'9.0.0','http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75',{
+        width:200,
+        height:200,
+        outwidth:48,
+        outheight:48
+      },
+      {
+       loop:false,
+       menu:false,
+       allowScriptAccess:'always',
+       allowFullScreen:'false',
+       quality:'best',
+       bgcolor:'#fff',
+       wmode:'transparent' 
+      });
+    </script>
+  </body>
+</html>
