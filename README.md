@@ -1,6 +1,6 @@
 ###ImgForBase64 by actionscript
   
-##example
+####example
   
 ```javascript
 function imgforbase64(str){
