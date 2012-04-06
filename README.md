@@ -25,5 +25,4 @@ build by flash-SDK 10.0.0 and must include player/10/playerglobal.swc
 
 ###some dependent
     swfobject 2.2 
-    flashplay 9.0.0 
     flashSDK 10.0.0
