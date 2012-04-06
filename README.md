@@ -21,7 +21,7 @@ function imgforbase64(str){
   
 use global function imgforbase64,other details your can find in test.html
 
-Supported directory
+build by flash-SDK 10.0.0 and must include player/10/playerglobal.swc
 
 ###some dependent
     swfobject 2.2 
