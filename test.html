@@ -7,7 +7,7 @@
   <body>
     <div id="btn"></div>
     <script>
-      function imgforbase64(str){
+      function imgforbase64(str,name){
         var id = 'J_preview',
             img;
             if(!document.getElementById(id)){
@@ -20,6 +20,7 @@
               img.src = 'data:image/png;base64,'+str;
             }
         console.log(str);
+        console.log(name);
       }
 
       swfobject.embedSWF('imgforbase64.swf','btn',200,200,'9.0.0','http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75',{
