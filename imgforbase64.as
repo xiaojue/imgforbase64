@@ -56,7 +56,9 @@
       private function onLoadComplete(event:Event):void{
         loader.contentLoaderInfo.removeEventListener(Event.COMPLETE,onLoadComplete);
         var bitmap:Bitmap = Bitmap(event.target.content);
-        var zoompic:BitmapData = BitmapUtil.getZoomDraw(bitmap,flashvars.outwidth,flashvars.outheight,true);
+        var width:Number = bitmap.width < flashvars.outwidth ? bitmap.width : flashvars.outwidth;
+        var height:Number = bitmap.height < flashvars.outheight ? bitmap.height : flashvars.outheight;
+        var zoompic:BitmapData = BitmapUtil.getZoomDraw(bitmap,width,height,true);
         finalpic = new Bitmap(zoompic,"auto",true);
         var pngStream:ByteArray=(new PNGEncoder).encode(finalpic.bitmapData);
         var base64Enc:Base64Encoder = new Base64Encoder();
